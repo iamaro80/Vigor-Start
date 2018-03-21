@@ -1,0 +1,1 @@
+# This is a test workplace. It must not relate to any project

@@ -1,3 +1,4 @@
 *.txt
 test.py
 00_Test_Space/
+.vscode/

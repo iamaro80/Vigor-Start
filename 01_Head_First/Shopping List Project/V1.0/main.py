@@ -1,6 +1,12 @@
-sl_1 = []
-sl_1.append('Rice')
-sl_1.append('Meat')
-print(sl_1)
-sl_1.pop()
-print(sl_1)
+# shopping_lists=['list1','list2']
+# shopping_lists= {'id':0,'name':'list1','id':1,'name':'list2'}
+
+units=['kg','liter']
+
+item = {'name':'rice',
+        'amount':5,
+        'unit':units[0]
+        }
+
+# print(shopping_lists)
+print(item)

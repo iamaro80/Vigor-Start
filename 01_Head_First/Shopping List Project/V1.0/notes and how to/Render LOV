@@ -1,0 +1,29 @@
+1. create list
+2. use tempate for loop to loop over collection (set in this example)
+3. pass the set to the template and render it 
+
+below show how to create list of values from set() and render it to html page
+
+1. list.html
+
+{% extends 'base.html' %} {% block body %}
+<div class="w3-panel">
+    <select class="w3-select w3-border" name="units">
+    {% for u in the_units %}
+        <option value={{u|e}}>{{u|e}}</option>
+        {%endfor%}
+
+      </select> {% endblock %}
+</div>
+
+2. my python code
+
+units = set()
+for x in range(1980, 2019, 1):
+    units.add(x)
+print(units)
+
+@app.route('/list')
+def load_list_items() ->'html':
+    title = 'En Units list'
+    return render_template('list.html', the_title=title, the_units=sorted(units))

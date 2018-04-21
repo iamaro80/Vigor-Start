@@ -1,0 +1,8 @@
+- Shopping List/s
+- Items
+- Add items to list
+- Checked / Unchecked items in list
+- Delete items from list 
+- Update Item information
+- Pagination
+- Alerts (warning messages on delete/rename)

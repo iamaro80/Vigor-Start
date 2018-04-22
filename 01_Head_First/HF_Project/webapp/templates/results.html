@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block body %}
 
-<h2 class="w3-container w3-green" style="box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">{{ the_title }}</h2>
+<h2 class="w3-container w3-yellow" style="box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">{{ the_title }}</h2>
 
 <p>You submitted the following data:</p>
-<table class="w3-table w3-panel w3-card-4">
+<table class="w3-table w3-panel">
     <tr>
         <td>Phrase:</td>
         <td>{{ the_phrase }}</td>
@@ -14,9 +14,10 @@
     </tr>
 </table>
 
-<div class="w3-panel w3-card-4">
+<div class="w3-panel">
     <p>
-        <b>When</b> <i>"{{the_phrase }}"</i>
+        <b>When</b>
+        <i>"{{the_phrase }}"</i>
         <b>is searched for "{{ the_letters }}", the following results are returned:</b>
     </p>
 </div>

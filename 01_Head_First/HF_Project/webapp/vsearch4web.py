@@ -41,7 +41,7 @@ def do_search() ->'html':
 def log_request(req: 'flask_request', res: str) -> None:
     os.chdir('D:/GitHub/vigor-start/01_Head_First/HF_Project/webapp/log')
     with open('vsearch.log', 'a') as log:
-        print(req, res, file=log)
+        print(req,, res, file=log)
 
 
 # units = {'kg', 'liter', 'box', 'packet', 'unit', }

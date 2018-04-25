@@ -1,15 +1,26 @@
 {% extends 'base.html' %} {% block body %}
 
-<h2 class="w3-container w3-green" style="box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+<h2 class="w3-container w3-red" style="box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
     {{ the_title }}</h2>
 
-<form class="w3-panel w3-card-4" method='POST' action='/search4'>
+<form class="w3-panel" method='POST' action='/search4'>
     <table class="w3-table">
         <p>Use this form to submit a search request:</p>
         <tr>
             <td>Phrase:</td>
             <td>
-                <input class="w3-input" name='phrase' type='TEXT' width='60' autocomplete='off'>
+                <!--
+                    <input class="w3-input" name='phrase' type='TEXT' width='60' value='ibrahim almaro' autocomplete='off'>
+                -->
+                <select class="w3-select w3-border" name="phrase">
+                        
+                            <option value='ibrahim'>Ibrahim Maro</option>
+                            <option value='najlaa'>najlaa khamash</option>
+                            <option value='elyas'>elyas Maro</option>
+                            <option value='basel'>basel Maro</option>
+                            <option value='yousef'>yousef Maro</option>
+                          </select>
+
             </td>
         </tr>
         <tr>
@@ -21,7 +32,7 @@
     </table>
     <p>When you're ready, click this button:</p>
     <p>
-        <input class="w3-btn w3-green" value='Do it!' type='SUBMIT'>
+        <input class="w3-btn w3-red" value='Do it!' type='SUBMIT'>
     </p>
 </form>
 

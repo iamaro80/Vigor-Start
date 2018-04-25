@@ -12,8 +12,12 @@ else:
     
 print(sl_path, '(File directory)')
 
+###########################################
 os.chdir(sl_path)
+with open('sl.txt','w') as create_file:
+    print(end='',file=create_file)
 
+###########################################
 
 def is_sl_found(slname: str) ->bool:
     if read_all_sl():

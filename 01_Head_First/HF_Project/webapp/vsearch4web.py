@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, escape
 from vsearch import search4letters
 import os
 
@@ -9,6 +9,11 @@ app = Flask(__name__)
 # def hello() -> '302':
 #     return redirect('/entry')
 
+def log_request(req: 'flask_request', res: str) -> None:
+    os.chdir('C:/GitHub/vigor-start/01_Head_First/HF_Project/webapp/log')
+    with open('vsearch.log', 'a') as log:
+        print(str(dir(req)), res, file=log)
+        
 
 @app.route('/')
 def start() ->'html':
@@ -29,7 +34,7 @@ def do_search() ->'html':
     phrase = request.form['phrase']
     letters = request.form['letters']
     results = str(search4letters(phrase, letters))
-    log_request(request, results)
+    log_request(request.user_agent, results)
     return render_template(
         'results.html',
         the_title=title,
@@ -38,11 +43,12 @@ def do_search() ->'html':
         the_results=results)
 
 
-def log_request(req: 'flask_request', res: str) -> None:
-    os.chdir('D:/GitHub/vigor-start/01_Head_First/HF_Project/webapp/log')
-    with open('vsearch.log', 'a') as log:
-        print(req,, res, file=log)
-
+@app.route('/viewlog')
+def view_the_log() ->str:
+    os.chdir('C:/GitHub/vigor-start/01_Head_First/HF_Project/webapp/log')
+    with open('vsearch.log', 'r') as log:
+        content = log.read()
+    return escape(content)
 
 # units = {'kg', 'liter', 'box', 'packet', 'unit', }
 # units = set()
@@ -59,4 +65,4 @@ def log_request(req: 'flask_request', res: str) -> None:
 #           the_units=sorted(units))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='192.168.1.2',debug=True)

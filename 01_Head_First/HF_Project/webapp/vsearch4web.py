@@ -28,7 +28,7 @@ def log_request(req: 'flask_request', res: str) -> None:
     with open('vsearch.log', 'a') as log:
         print(
             req.form, req.remote_addr, req.user_agent,
-            res,  file=log, sep='|')
+            res,  file=log, sep=' | ')
 
 
 @app.route('/')
@@ -63,7 +63,7 @@ def do_search() ->'html':
 def view_the_log() ->str:
     os.chdir(log_path)
     with open('vsearch.log', 'r') as log:
-        content = log.read()
+        content = log.readlines()
     return escape(content)
 
 # units = {'kg', 'liter', 'box', 'packet', 'unit', }
